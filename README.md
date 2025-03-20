@@ -1,59 +1,47 @@
-# Concentration Game
+# Fruit Flip - Concentration Game
 
-A simple and clean web-based concentration game designed to help people improve their focus and attention.
+A web-based concentration game featuring fruit-themed cards with a pseudo-3D flip effect.
 
-## About
+## Game Description
 
-This concentration game (also known as Memory or Matching Pairs) is built with vanilla HTML, CSS, and JavaScript. The game is designed to be:
+Fruit Flip is a memory matching game where players flip cards to find matching pairs of fruits. When a match is found, the cards are replaced with new ones, keeping the game fresh and evolving.
 
-- Simple and distraction-free
-- Easy to play
-- Focused on improving attention
-- No login or registration required
+### Features
 
-## Features
-
-- Three difficulty levels (Easy, Medium, Hard)
-- Timer to track gameplay duration
-- Move counter to track efficiency
-- Match counter to show progress
-- Responsive design that works on desktop and mobile devices
-- Performance feedback based on your gameplay
+- **Multiple Grid Sizes**: Choose between 3x2 (default), 3x4, or 4x4 grid layouts
+- **Countdown Timer**: Play against the clock with timer options from 1-5 minutes
+- **Dynamic Card Replacement**: Matched cards are replaced with new ones
+- **Scoring System**: Earn 10 points for each matched pair
+- **Playful Animations**: Card flips, confetti effects for matches
+- **Responsive Design**: Optimized for both desktop and mobile play
 
 ## How to Play
 
-1. Click any card to flip it and reveal the symbol
-2. Click another card to find a matching symbol
-3. If the cards match, they stay flipped
-4. If they don't match, they flip back over
-5. Continue until all pairs are matched
-6. Try to complete the game with as few moves as possible
+1. Select your preferred grid size and timer duration
+2. Click or tap cards to flip them
+3. Find matching pairs of fruits
+4. When you match a pair, they'll be replaced with new cards
+5. Score as many points as possible before the timer runs out
 
-## Benefits for Focus and Attention
+## Technical Details
 
-Playing concentration games can help:
-- Improve short-term memory
-- Enhance concentration
-- Practice mindfulness
-- Train visual attention
-- Develop pattern recognition skills
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-
-## Running the Game
-
-Simply open the `index.html` file in any modern web browser to start playing immediately. No server, login, or installation required.
+- Built with HTML5, CSS3, and vanilla JavaScript
+- Responsive design for desktop and mobile devices
+- Optimized animations for smooth performance
+- No external libraries or dependencies required
 
 ## Development
 
-To modify or extend the game:
+This game was developed according to the Product Requirements Document (PRD) version 5.0, focusing on creating a fast, engaging memory game with modern aesthetics and responsive design.
 
-1. Clone or download this repository
-2. Edit the HTML, CSS, or JavaScript files as needed
-3. Open `index.html` in a browser to test your changes
+## Future Enhancements
 
-Feel free to customize the game to suit your specific needs!
+- Additional fruit patterns
+- New game modes
+- Difficulty levels
+- Leaderboards
+- Sound effects and music
+
+## License
+
+[MIT License](LICENSE)

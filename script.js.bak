@@ -170,12 +170,23 @@ document.addEventListener('DOMContentLoaded', () => {
       card2.classList.add('shake');
       
       setTimeout(() => {
-        // Get a new random fruit for the new pair of cards
-        const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+        // Get new random fruits from available fruits
+        const availableFruits = fruits.filter(fruit => !cards.some(c => 
+          !c.classList.contains('matched') && c.dataset.fruit === fruit
+        ));
         
-        // Create new card elements (both with same fruit to create a new pair)
-        const newCard1 = createCardElement(randomFruit, card1.dataset.index);
-        const newCard2 = createCardElement(randomFruit, card2.dataset.index);
+        let newFruit;
+        
+        if (availableFruits.length > 0) {
+          newFruit = availableFruits[Math.floor(Math.random() * availableFruits.length)];
+        } else {
+          // If no unique fruits available, use any fruit
+          newFruit = fruits[Math.floor(Math.random() * fruits.length)];
+        }
+        
+        // Create new card elements
+        const newCard1 = createCardElement(newFruit, card1.dataset.index);
+        const newCard2 = createCardElement(newFruit, card2.dataset.index);
         
         // Replace old cards with new ones
         gameBoard.replaceChild(newCard1, card1);
