@@ -1,10 +1,10 @@
-# Fruit Flip - Concentration Game
+# Pair Flip - Concentration Game
 
-A web-based concentration game featuring fruit-themed cards with a pseudo-3D flip effect.
+A web-based concentration game featuring fruit-themed cards with a flip effect.
 
 ## Game Description
 
-Fruit Flip is a memory matching game where players flip cards to find matching pairs of fruits. When a match is found, the cards are replaced with new ones, keeping the game fresh and evolving.
+Pair Flip is a memory matching game where players flip cards to find matching pairs of fruits in a countdown timer. When a match is found, the cards are replaced with new ones, keeping the game fresh and evolving.
 
 ### Features
 
@@ -22,6 +22,22 @@ Fruit Flip is a memory matching game where players flip cards to find matching p
 3. Find matching pairs of fruits
 4. When you match a pair, they'll be replaced with new cards
 5. Score as many points as possible before the timer runs out
+
+## Project Structure
+
+```
+.
+├── README.md              # This documentation file
+├── backups/               # Backup files directory
+│   ├── debug.html         # Empty debug file used during development
+│   ├── script.js          # Original JavaScript implementation
+│   └── script.js.bak      # Backup of original script
+├── fruit-flip.js          # Main JavaScript file with game logic
+├── index.html             # Main HTML file
+├── index.html.backup      # Backup of the HTML file
+├── prd.md                 # Product Requirements Document
+└── styles.css             # CSS styling for the game
+```
 
 ## Technical Details
 

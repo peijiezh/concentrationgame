@@ -8,7 +8,7 @@ Version: 5.0
 ## 1. Overview
 
 ### 1.1 Purpose
-Develop a web-based concentration game using flat cards that flip quickly to reveal patterns. Players match pairs—same fruit—in a classic concentration style. The game launches directly into play with grid size options (3x2, 3x4, 4x4), default 3x2 option for instant access.  
+Develop a web-based concentration game using flat cards that flip quickly to reveal patterns. Players match pairs—same fruit—in a classic concentration style with countdown timer. The game launches directly into play with grid size options (3x2, 3x4, 4x4), default 3x2 option for instant access.  
 
 ### 1.2 Objective
 Offer a fast, familiar memory game with a modern simple grid size choices.  
@@ -25,7 +25,7 @@ Structure: A grid of cards with options of 3x2 (6 cards), 3x4 (12 cards), or 4x4
 
 Objective: Match pairs of cards with the same fruit(e.g., apple to apple) by flipping two at a time, 
 
-Dynamic mechanic: When a pair is matched, those cards swap for new ones with fresh patterns (same shape, different colors), cards will shack into peices and turn into confettis to celebrate and a new pair is added to the pool to keep it evolving.
+Dynamic mechanic: When a pair is matched, those cards swap for new ones with fresh patterns (same shape, different colors), cards will shack into peices and turn into confettis to celebrate, a new pair is added to the pool to keep it evolving. The new pair won't just simply replace in the same position, one will be added to the disapearing card's position and the other will be added to the grid randomly, switch position with one exist card
 
 ### 2.2 Key Features
 cards Flip: Cards flip, starting face-down and revealing patterns on click or tap.  
@@ -72,7 +72,7 @@ Pattern Generation: Assign random shapes (e.g., apple, banana, chestnut), ensuri
 
 Matching: Flip two cards: match same fruit swaps them for new cards; no match flips them back after 1 second.  
 
-Dynamic mechanic: When a pair is matched, those cards swap for new ones with fresh patterns (same shape, different colors), cards will shack into peices and turn into confettis to celebrate and a new pair is added, maintaining pair count to the pool to keep it evolving.
+Dynamic mechanic: When a pair is matched, those cards swap for new ones with fresh patterns (same shape, different colors), cards will shack into peices and turn into confettis to celebrate, a new pair is added to the pool to keep it evolving. The new pair won't just simply replace in the same position, one will be added to the disapearing card's position and the other will be added to the grid randomly, switch position with one exist card
 
 
 ### 4.2 Card Design

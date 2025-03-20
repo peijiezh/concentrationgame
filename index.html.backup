@@ -157,7 +157,9 @@
         <div id="confetti-container" class="confetti-container"></div>
     </div>
 
-
+    <script src="script.js"></script>
+    <script src="fix-cards.js"></script>
+    <script src="game-mechanics.js"></script>
     <script src="fruit-flip.js"></script>
 
     <script>

@@ -80,7 +80,6 @@
   }
   
   .card {
-    position: relative;
     transform-style: preserve-3d;
     transition: transform 0.3s;
     cursor: pointer;
@@ -124,13 +123,10 @@
     transform: rotateY(180deg);
   }
   
-  .fruit-icon {
-    font-size: 2.5rem;
-    position: relative;
   }
   
-  /* Buttons */
-  .restart-btn {
+/* Buttons */
+.restart-btn {
     background-color: #ff6b6b;
     color: white;
     border: none;
@@ -142,6 +138,10 @@
     transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 33%; /* Width of about 2 cards in a 3x2 grid (3 columns) */
+    max-width: 200px;
   }
   
   .restart-btn:hover {
@@ -236,10 +236,10 @@
       margin: 0 5px;
     }
     
-    .fruit-icon {
-      font-size: 2rem;
-    }
-  }
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+      }
   
   /* Optimize for different screen sizes */
   @media (max-height: 700px) {
@@ -257,7 +257,6 @@
       margin-bottom: 3px;
     }
     
-    .fruit-icon {
       font-size: 1.8rem;
     }
     
@@ -303,3 +302,4 @@
       opacity: 0;
     }
   }
+.fruit-icon { width: 80%; height: auto; max-height: 80%; object-fit: contain; }
