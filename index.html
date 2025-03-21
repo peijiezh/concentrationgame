@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruit Flip - Concentration Game</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
-    <link rel="manifest" href="assets/site.webmanifest">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍉</text></svg>">
     <style>
         /* Additional styles to ensure cards are visible and shaped properly */
         .game-container {
@@ -16,97 +13,19 @@
             flex-direction: column;
             padding: 10px;
         }
-        
-        .game-board {
-            flex: 1;
-            display: grid;
-            grid-gap: 12px;
-            padding: 15px;
-            margin-bottom: 10px;
-        }
-        
-        /* Fix card shape */
-        .card {
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.3s;
-            cursor: pointer;
-            width: 100%;
-            aspect-ratio: 3/4;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 0;
-        }
-        
-        .card-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .card-front {
-            background-color: #4db6ac;
-            transform: rotateY(180deg);
-        }
-        
-        .card-back {
-            background-color: #80cbc4;
-            background-image: repeating-linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.1),
-                rgba(255, 255, 255, 0.1) 10px,
-                transparent 10px,
-                transparent 20px
-            );
-        }
-
-        /* Make restart button smaller, about two cards width */
-        .restart-btn {
-            width: 33%; /* About 2 cards out of 3 columns (2/3 would be 66%) */
-            max-width: 180px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
+             
         .settings-row {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-bottom: 10px;
-        }
-        
-        .game-controls {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        
-        @media (max-height: 600px) {
-            .card {
-                aspect-ratio: 2/3;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-                margin: 5px 0;
-            }
-            
-            .tagline {
-                display: none;
-            }
-        }
+        }    
     </style>
 </head>
 <body>
     <div class="game-container">
         <header>
-            <h1>Fruit Flip</h1>
+            <h1>Fruit Flip - Countdown Concentration Game</h1>
             <p class="tagline">Flip. Match. Shine.</p>
         </header>
 
@@ -130,6 +49,8 @@
             </div>
         </div>
 
+
+        
         <div class="timer-options">
             <select id="timer-duration">
                 <option value="1" selected>1 min</option>
@@ -153,11 +74,48 @@
                 <button id="play-again-btn">Play Again</button>
             </div>
         </div>
-
+        
         <div id="confetti-container" class="confetti-container"></div>
     </div>
 
 
+    <div class="game-mechanics">
+        <h2>How to Play Fruit Flip</h2>
+        <div class="mechanics-content">
+            <div class="mechanic-item">
+                <h3>Game Objective</h3>
+                <p>Match pairs of identical fruits before time runs out to score points. Each match earns you 10 points!</p>
+            </div>
+            
+            <div class="mechanic-item">
+                <h3>Game Controls</h3>
+                <ul>
+                    <li>Click any card to flip it and reveal the fruit</li>
+                    <li>Find two matching fruits to make a pair</li>
+                    <li>Successfully matched pairs will be replaced with new cards</li>
+                </ul>
+            </div>
+
+            <div class="mechanic-item">
+                <h3>Game Settings</h3>
+                <ul>
+                    <li>Choose grid size: 3x2, 3x4, or 4x4</li>
+                    <li>Set timer duration: 1 to 5 minutes</li>
+                    <li>Click 'Restart' to begin a new game anytime</li>
+                </ul>
+            </div>
+
+            <div class="mechanic-item">
+                <h3>Special Features</h3>
+                <ul>
+                    <li>Matched pairs trigger celebratory confetti</li>
+                    <li>New cards appear after each match to keep the game going</li>
+                    <li>Responsive design works on all screen sizes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
     <script src="fruit-flip.js"></script>
 
     <script>
