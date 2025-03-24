@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let rows, cols;
 
     // Fruit names for the webp images - updated to match actual files
-    const fruits = ['grapes', 'kiwi', 'orange', 'pear', 'pineapple', 'strawberry', 'watermelon'];
+    const fruits = ['kiwi', 'pear', 'pineapple', 'strawberry', 'watermelon', 'avocado', 'banana', 'apple', 'coconut'];
 
     // Helper function to adjust gameBoard sizing based on grid size
     function adjustGameBoard() {

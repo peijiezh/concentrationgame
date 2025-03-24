@@ -72,28 +72,59 @@
   
 /* Game Board */
 .game-board {
-    flex: 1;
-    display: grid;
-    grid-gap: 12px;
-    padding: 15px;
-    margin: 0 auto 10px;
-    max-width: 100%;
-    perspective: 1000px;
-    flex-grow: 1;
-    padding: 10px;
-  }
+  flex: 1;
+  display: grid;
+  grid-gap: 8px;
+  padding: 10px;
+  margin: 0 auto 10px;
+  max-width: 100%;
+  perspective: 1000px;
+  flex-grow: 1;
+  overflow: auto; /* Add scroll if needed */
+}
   
 /* Fix card shape */
 .card {
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    cursor: pointer;
-    width: 100%;
-    aspect-ratio: 3/4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  min-width: 80px;
+  min-height: 120px;
+  /* Remove the too restrictive max-width */
+}
+
+/* Grid Layouts with sizing adjustments */
+.grid-3x2 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-3x2 .card {
+  /* Remove overly restrictive max-width/max-height */
+}
+
+.grid-3x4 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.grid-3x4 .card {
+  /* Remove overly restrictive max-width/max-height */
+}
+
+.grid-4x4 {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.grid-4x4 .card {
+  /* Remove overly restrictive max-width/max-height */
 }
   
   .card-face {
@@ -129,8 +160,8 @@
   }
   
   .fruit-image {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90% !important; /* Increase from 80% to 90% for mobile */
+    max-height: 90% !important;
     object-fit: contain;
   }
   
@@ -287,16 +318,47 @@
   /* Responsive Styles */
   @media (max-width: 768px) {
     .game-container {
-      height: 95vh;
+      height: auto;
+      min-height: 80vh;
+      max-height: 95vh;
       display: flex;
       flex-direction: column;
       padding: 10px;
+      overflow: auto;
     }
     
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
     
+    .game-board {
+      grid-gap: 5px;
+      padding: 5px;
+      max-height: 50vh;
+      overflow: visible;
+    }
+    
+    .card {
+      aspect-ratio: 2/3;
+    }
+
+    .grid-3x2 .card {
+      max-width: calc((100% - 10px) / 3);
+      max-height: calc((100% - 5px) / 2);
+    }
+    
+    .grid-3x4 .card {
+      max-width: calc((100% - 10px) / 3);
+      max-height: calc((100% - 15px) / 4);
+    }
+    
+    .grid-4x4 .card {
+      max-width: calc((100% - 15px) / 4);
+      max-height: calc((100% - 15px) / 4);
+      min-width: 70px;
+      min-height: 105px;
+    }
+
     .game-controls {
       flex-direction: row;
       flex-wrap: wrap;
@@ -310,8 +372,15 @@
     
     .score-container, .timer-container, .grid-size-container {
       margin: 0 5px;
+      font-size: 0.9rem;
     }
     
+    .fruit-image {
+      max-width: 95% !important;  /* Increase from 80% to 95% */
+      max-height: 95% !important; /* Increase from 80% to 95% */
+      object-fit: contain;  
+    }
+
     .fruit-icon {
       font-size: 2rem;
     }
@@ -337,52 +406,7 @@
 
   }
   
-  /* Optimize for different screen sizes */
-  @media (max-height: 700px) {
-    .game-container {
-      padding: 8px;
-    }
-    
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0;
-      margin: 5px 0;
-    }
-    
-    .tagline {
-      font-size: 0.8rem;
-      margin-bottom: 3px;
-      display: none;
-    }
-    
-    .fruit-icon {
-      font-size: 1.8rem;
-    }
-
-    .card {
-        aspect-ratio: 2/3;
-    }
-    
-    .game-controls, .timer-options {
-      margin-bottom: 5px;
-    }
-  }
   
-  /* Grid Layouts */
-  .grid-3x2 {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-  
-  .grid-3x4 {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-  
-  .grid-4x4 {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
   
   /* Animations */
   @keyframes shake {

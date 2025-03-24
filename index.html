@@ -141,6 +141,63 @@
             window.addEventListener('resize', adjustGameBoard);
         });
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Function to ensure cards never get too small
+      function preventSmallCards() {
+        const cards = document.querySelectorAll('.card');
+        const isMobile = window.innerWidth <= 768;
+        
+        // Set minimum sizes based on device
+        const minWidth = isMobile ? 70 : 90;
+        const aspectRatio = isMobile ? 1.5 : 1.33; // 2:3 for mobile, 3:4 for desktop
+        
+        cards.forEach(card => {
+          // Get current width from computed style
+          const currentWidth = parseFloat(window.getComputedStyle(card).width);
+          
+          // Apply minimum width if current width is too small
+          if (currentWidth < minWidth) {
+            card.style.width = `${minWidth}px`;
+            card.style.height = `${minWidth * aspectRatio}px`;
+          }
+          
+          // Make sure images scale appropriately
+          const fruitImage = card.querySelector('.fruit-image');
+          if (fruitImage) {
+            fruitImage.style.maxWidth = '95%';
+            fruitImage.style.maxHeight = '95%';
+          }
+        });
+      }
+      
+      // Run when window resizes
+      window.addEventListener('resize', preventSmallCards);
+      
+      // Run on page load and after a slight delay
+      preventSmallCards();
+      setTimeout(preventSmallCards, 500);
+      
+      // Run when grid changes
+      document.getElementById('grid-size').addEventListener('change', () => {
+        setTimeout(preventSmallCards, 100);
+      });
+      
+      // Run when cards are added/removed
+      const observer = new MutationObserver(() => {
+        setTimeout(preventSmallCards, 100);
+      });
+      
+      observer.observe(document.getElementById('game-board'), {
+        childList: true,
+        subtree: true
+      });
+    });
+  </script>
+
+
+
+
 <a target="_blank" href="https://jam.pieter.com" style="font-family: 'system-ui', sans-serif; position: fixed; bottom: -1px; right: -1px; padding: 7px; font-size: 14px; font-weight: bold; background: #fff; color: #000; text-decoration: none; z-index: 10; border-top-left-radius: 12px; z-index: 10000; border: 1px solid #fff;">🕹️ Vibe Jam 2025</a>
 </body>
 </html>
