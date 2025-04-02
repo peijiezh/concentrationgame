@@ -58,6 +58,9 @@ This game was developed according to the Product Requirements Document (PRD) ver
 - Leaderboards
 - Sound effects and music
 
+## update
+now you can play at https://concentrationgame.xyz/
+
 ## License
 
 [MIT License](LICENSE)
