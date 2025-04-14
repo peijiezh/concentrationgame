@@ -66,8 +66,21 @@
         padding: 5px 10px;
         border-radius: 5px;
         background-color: rgba(255, 255, 255, 0.7);
-}
-}
+    }
+    .site-footer p:last-child {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .site-footer a[rel="dofollow"] {
+      color: #ff6b6b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .site-footer a[rel="dofollow"]:hover {
+      text-decoration: underline;
+    }
+  }
   
 
 
