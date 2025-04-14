@@ -40,7 +40,33 @@
             justify-content: center;
             gap: 10px;
             margin-bottom: 10px;
-        }    
+        }
+        
+        /* Navigation styles */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        .nav-link.active {
+            background-color: #ff6b6b;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +74,10 @@
         <header>
             <h1>Fruit Flip - Countdown Concentration Game</h1>
             <p class="tagline">Flip. Match. Shine.</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Game</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </nav>
         </header>
 
         <!-- Introduction section for SEO -->
