@@ -319,6 +319,17 @@
   margin-bottom: 60px;  /* Added bottom margin */
 }
 
+.recommendations-section {
+  max-width: 90vw;
+  width: 95%;
+  margin: 40px auto;  /* Increased top margin */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;  /* Added bottom margin */
+}
+
 .mechanics-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
